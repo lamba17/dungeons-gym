@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(cmd /c \"where npm\")",
+      "Bash(cmd /c \"where node\")",
+      "Bash(cmd /c \"npm --version\")",
+      "Bash(cmd /c \"npm --version && echo NPM_OK\")",
+      "Bash(powershell -Command \"Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; node --version\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\Program Files\\\\'', ''C:\\\\Program Files \\(x86\\)\\\\'', ''C:\\\\Users\\\\HP\\\\AppData\\\\Local\\\\'' -Directory -Filter ''*node*'' -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\HP\\\\AppData\\\\Local\\\\claude-cli-nodejs\\\\'' -Recurse | Select-Object FullName\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(powershell -Command \"Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell -Command \"Test-Path ''C:\\\\Program Files\\\\nodejs\\\\npm.cmd''; Get-ChildItem ''C:\\\\Program Files\\\\nodejs\\\\'' | Select-Object -ExpandProperty Name | head -10\")",
+      "Bash(powershell -Command \"[System.IO.Path]::GetShortPathName\\(''C:\\\\Program Files\\\\nodejs\\\\node.exe''\\)\")",
+      "Bash(powershell -Command \"cmd /c ''for %I in \\(\"\"C:\\\\Program Files\\\\nodejs\\\\node.exe\"\"\\) do @echo %~sI''\")",
+      "WebFetch(domain:dungeon-gym.netlify.app)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/download-assets.ps1\")",
+      "Bash(powershell -Command \":*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/start-dev.ps1\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"Get-Command node.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; Get-Command npm.cmd -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/build.ps1\")"
+    ]
+  }
+}

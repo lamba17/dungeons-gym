@@ -44,18 +44,22 @@ export default function Transformations() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="bg-card rounded-2xl overflow-hidden border border-border"
             >
-              {/* Before/After — same image, split in half */}
-              <div className="relative h-[280px] overflow-hidden">
-                <img src={t.img} alt="Before" className="absolute left-0 top-0 w-1/2 h-full object-cover object-left" />
-                <img src={t.img} alt="After"  className="absolute right-0 top-0 w-1/2 h-full object-cover object-right" />
-                {/* Red divider */}
-                <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary z-10" />
+              {/* Transformation image — composite before/after photo */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={t.img}
+                  alt={`${t.name} transformation`}
+                  className="w-full h-[280px] object-cover"
+                />
+                {/* Before / After labels */}
                 <span className="absolute top-3 left-3 font-heading text-xs uppercase tracking-widest bg-black/60 text-white px-2 py-1 rounded">
                   Before
                 </span>
                 <span className="absolute top-3 right-3 font-heading text-xs uppercase tracking-widest bg-primary/80 text-white px-2 py-1 rounded">
                   After
                 </span>
+                {/* Red divider at centre */}
+                <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary z-10" />
               </div>
               {/* Quote */}
               <div className="p-6">

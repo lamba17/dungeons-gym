@@ -1,8 +1,19 @@
+import { useMemo } from 'react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
 } from 'recharts';
 
 interface DataPoint { month: string; members: number; new: number }
+
+const getChartColors = () => {
+  const root = document.documentElement;
+  const getVar = (name: string) => getComputedStyle(root).getPropertyValue(name).trim();
+  return {
+    axis: getVar('--chart-axis'),
+    grid: getVar('--chart-grid'),
+    legend: getVar('--chart-legend'),
+  };
+};
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
@@ -20,6 +31,8 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export default function MemberGrowthChart({ data, compact }: { data: DataPoint[]; compact?: boolean }) {
   const h = compact ? 180 : 260;
+  const colors = useMemo(() => getChartColors(), []);
+
   return (
     <ResponsiveContainer width="100%" height={h}>
       <AreaChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
@@ -33,13 +46,13 @@ export default function MemberGrowthChart({ data, compact }: { data: DataPoint[]
             <stop offset="95%" stopColor="#ff4444" stopOpacity={0.0} />
           </linearGradient>
         </defs>
-        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-        <XAxis dataKey="month" tick={{ fill: 'rgba(245,245,245,0.4)', fontSize: 10, fontFamily: 'Oswald' }}
+        <CartesianGrid strokeDasharray="3 3" stroke={colors.grid} />
+        <XAxis dataKey="month" tick={{ fill: colors.axis, fontSize: 10, fontFamily: 'Oswald' }}
           axisLine={false} tickLine={false} />
-        <YAxis tick={{ fill: 'rgba(245,245,245,0.4)', fontSize: 10, fontFamily: 'Oswald' }}
+        <YAxis tick={{ fill: colors.axis, fontSize: 10, fontFamily: 'Oswald' }}
           axisLine={false} tickLine={false} />
         <Tooltip content={<CustomTooltip />} />
-        {!compact && <Legend formatter={v => <span style={{ color: 'rgba(245,245,245,0.6)', fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{v === 'members' ? 'Total Active' : 'New Joins'}</span>} />}
+        {!compact && <Legend formatter={v => <span style={{ color: colors.legend, fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{v === 'members' ? 'Total Active' : 'New Joins'}</span>} />}
         <Area type="monotone" dataKey="members" stroke="#e0060d" strokeWidth={2} fill="url(#membersGrad)" dot={false} activeDot={{ r: 5, fill: '#e0060d' }} />
         <Area type="monotone" dataKey="new"     stroke="#ff6666" strokeWidth={1.5} strokeDasharray="4 2" fill="url(#newGrad)" dot={false} activeDot={{ r: 4, fill: '#ff6666' }} />
       </AreaChart>

@@ -42,7 +42,8 @@ export default function Outdoor() {
             >
               <div className="absolute inset-0 border border-transparent group-hover:border-primary/40 rounded-xl transition-all duration-500 z-10" />
               <img src={img} alt={label} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0"
+                style={{background: 'linear-gradient(to top, var(--outdoor-gradient-from) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)'}} />
               <div className="outdoor-card-overlay absolute inset-0" />
               <div className="absolute bottom-0 left-0 p-6 font-heading text-xl uppercase tracking-widest text-white z-10">
                 {label}

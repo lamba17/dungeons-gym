@@ -6,24 +6,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#000000',
-        foreground: '#f5f5f5',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
         primary: {
           DEFAULT: '#e0060d',
           foreground: '#f5f5f5',
         },
         card: {
-          DEFAULT: '#0d0d0d',
-          foreground: '#f5f5f5',
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--foreground)',
         },
-        border: '#1f1f1f',
+        border: 'var(--border)',
         muted: {
-          DEFAULT: '#1a1a1a',
-          foreground: 'rgba(245,245,245,0.7)',
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
         },
         secondary: {
-          DEFAULT: '#0d0d0d',
-          foreground: '#f5f5f5',
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--foreground)',
         },
       },
       fontFamily: {

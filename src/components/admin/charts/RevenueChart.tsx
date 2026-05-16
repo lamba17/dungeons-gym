@@ -1,8 +1,18 @@
+import { useMemo } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell
 } from 'recharts';
 
 interface DataPoint { month: string; revenue: number }
+
+const getChartColors = () => {
+  const root = document.documentElement;
+  const getVar = (name: string) => getComputedStyle(root).getPropertyValue(name).trim();
+  return {
+    axis: getVar('--chart-axis'),
+    grid: getVar('--chart-grid'),
+  };
+};
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
@@ -22,13 +32,15 @@ const formatYAxis = (val: number) =>
 export default function RevenueChart({ data, compact }: { data: DataPoint[]; compact?: boolean }) {
   const maxVal = Math.max(...data.map(d => d.revenue));
   const h = compact ? 180 : 260;
+  const colors = useMemo(() => getChartColors(), []);
+
   return (
     <ResponsiveContainer width="100%" height={h}>
       <BarChart data={data} margin={{ top: 5, right: 5, left: -10, bottom: 0 }} barSize={compact ? 14 : 22}>
-        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-        <XAxis dataKey="month" tick={{ fill: 'rgba(245,245,245,0.4)', fontSize: 10, fontFamily: 'Oswald' }}
+        <CartesianGrid strokeDasharray="3 3" stroke={colors.grid} vertical={false} />
+        <XAxis dataKey="month" tick={{ fill: colors.axis, fontSize: 10, fontFamily: 'Oswald' }}
           axisLine={false} tickLine={false} />
-        <YAxis tickFormatter={formatYAxis} tick={{ fill: 'rgba(245,245,245,0.4)', fontSize: 10, fontFamily: 'Oswald' }}
+        <YAxis tickFormatter={formatYAxis} tick={{ fill: colors.axis, fontSize: 10, fontFamily: 'Oswald' }}
           axisLine={false} tickLine={false} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(224,6,13,0.06)' }} />
         <Bar dataKey="revenue" radius={[4, 4, 0, 0]}>

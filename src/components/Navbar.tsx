@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Dumbbell, LogOut, User, LayoutDashboard } from 'lucide-react';
+import { Menu, X, Dumbbell, LogOut, User, LayoutDashboard, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 const NAV_LINKS = [
   { label: 'Home',        href: '/#home' },
@@ -16,6 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { currentMember, isAdmin, logout } = useAuth();
+  const { theme, toggle } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -70,6 +72,14 @@ export default function Navbar() {
 
           {/* Desktop Right */}
           <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={toggle}
+              className="text-foreground/60 hover:text-foreground transition-colors"
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
             {isAdmin ? (
               <>
                 <Link to="/admin" className="font-heading text-sm uppercase tracking-[0.1em] text-primary flex items-center gap-2">
@@ -117,6 +127,13 @@ export default function Navbar() {
               <span className="text-gradient">Dungeon</span> Gym
             </span>
           </div>
+          <button
+            onClick={toggle}
+            className="absolute top-5 left-8 text-foreground/60 hover:text-foreground transition-colors"
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          >
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
           {NAV_LINKS.map(link => (
             <button
               key={link.label}

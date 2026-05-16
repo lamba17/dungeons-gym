@@ -1,9 +1,15 @@
+import { useMemo } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Member, PLAN_DISPLAY, PlanType } from '../../../lib/types';
 
 interface Props { members: Member[]; allMembers: Member[] }
 
 const COLORS = ['#e0060d', '#ff4444', '#ff7777', '#ffaaaa'];
+
+const getChartColors = () => {
+  const root = document.documentElement;
+  return getComputedStyle(root).getPropertyValue('--chart-legend').trim();
+};
 
 const CustomTooltip = ({ active, payload }: any) => {
   if (!active || !payload?.length) return null;
@@ -16,6 +22,8 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 export default function ExpiryChart({ members, allMembers }: Props) {
+  const legendColor = useMemo(() => getChartColors(), []);
+
   if (members.length === 0) {
     // Show plan distribution of all active members instead
     const planCounts = allMembers
@@ -45,7 +53,7 @@ export default function ExpiryChart({ members, allMembers }: Props) {
               {data.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
             </Pie>
             <Tooltip content={<CustomTooltip />} />
-            <Legend formatter={v => <span style={{ color: 'rgba(245,245,245,0.6)', fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{v}</span>} />
+            <Legend formatter={v => <span style={{ color: legendColor, fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{v}</span>} />
           </PieChart>
         </ResponsiveContainer>
       </div>
@@ -71,7 +79,7 @@ export default function ExpiryChart({ members, allMembers }: Props) {
           {data.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
         </Pie>
         <Tooltip content={<CustomTooltip />} />
-        <Legend formatter={v => <span style={{ color: 'rgba(245,245,245,0.6)', fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase' }}>{v}</span>} />
+        <Legend formatter={v => <span style={{ color: legendColor, fontFamily: 'Oswald', fontSize: 11, textTransform: 'uppercase' }}>{v}</span>} />
       </PieChart>
     </ResponsiveContainer>
   );

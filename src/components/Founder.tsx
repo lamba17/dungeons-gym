@@ -18,7 +18,7 @@ export default function Founder() {
                           shadow-[0_0_40px_rgba(224,6,13,0.15)]">
             <img
               src="/lovable-uploads/f4831424-e81a-4716-a96a-6902caceef03.png"
-              alt="Akash Lamba — Founder"
+              alt="Ashutosh — Founder"
               className="w-full h-[500px] lg:h-[600px] object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
@@ -40,7 +40,7 @@ export default function Founder() {
             Meet The <span className="text-gradient">Founder</span>
           </h2>
           <p className="font-heading text-2xl font-bold uppercase tracking-wide mb-1 mt-4">
-            AKASH LAMBA
+            ASHUTOSH
           </p>
           <p className="font-heading text-sm uppercase tracking-[0.2em] text-primary mb-6">
             Founder &amp; Head Coach
@@ -48,7 +48,7 @@ export default function Founder() {
 
           <p className="text-foreground/80 leading-relaxed mb-6 font-body">
             With over a decade of experience in strength training and competitive fitness,
-            Akash Lamba built Dungeon Gym with one mission: to create a space where ordinary
+            Ashutosh built Dungeon Gym with one mission: to create a space where ordinary
             people become extraordinary. His passion for fitness goes beyond lifting — it's
             about forging mental toughness, building discipline, and helping every member
             unlock their full potential. Under his guidance, hundreds of members have achieved

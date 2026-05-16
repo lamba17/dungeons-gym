@@ -306,5 +306,5 @@ export const MOCK_PAYMENTS: Payment[] = [
 export const ADMIN_CREDENTIALS = {
   email: 'admin@dungeongym.com',
   password: 'admin123',
-  name: 'Akash Lamba',
+  name: 'Ashutosh',
 };

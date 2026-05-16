@@ -4,7 +4,7 @@ import { Star } from 'lucide-react';
 
 const REVIEWS = [
   { initials: 'RS', name: 'Rahul Sharma',  achievement: 'Lost 18kg in 5 months',        quote: 'Best gym environment in the city. The vibe is intense and motivating. Every session feels like a war — and I love it.', featured: true },
-  { initials: 'PV', name: 'Priya Verma',   achievement: 'Gained lean muscle in 3 months', quote: 'Dungeon Gym is not just a gym, it\'s a lifestyle. The trainers push you beyond your limits. Akash sir is truly inspiring.' },
+  { initials: 'PV', name: 'Priya Verma',   achievement: 'Gained lean muscle in 3 months', quote: 'Dungeon Gym is not just a gym, it\'s a lifestyle. The trainers push you beyond your limits. Ashutosh sir is truly inspiring.' },
   { initials: 'AP', name: 'Arjun Patel',   achievement: 'Deadlift PR: 200kg',             quote: 'The equipment, the atmosphere, the coaching — everything is top notch. Best investment I\'ve made in my health.' },
   { initials: 'SK', name: 'Sneha Kapoor',  achievement: 'Complete body transformation',  quote: 'I was skeptical at first but Dungeon Gym completely changed my life. Lost 20kg and gained so much confidence!' },
   { initials: 'DY', name: 'Deepak Yadav',  achievement: 'Lost 25kg in 8 months',         quote: 'Hardcore gym with a community feel. The trainers genuinely care about your progress. I\'ve tried 5 gyms — this is the best.' },

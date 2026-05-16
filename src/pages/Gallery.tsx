@@ -19,7 +19,7 @@ const IMAGES = [
   { src: '/assets/outdoor-group-Dwjb9TYM.jpg',   alt: 'Group training',                     cat: 'outdoor' as Category },
   { src: '/assets/transform-1-BKPkLdc9.jpg',     alt: 'Rahul S. transformation',            cat: 'transformations' as Category },
   { src: '/assets/transform-2-D9r__3Ok.jpg',     alt: 'Vikram P. transformation',           cat: 'transformations' as Category },
-  { src: '/lovable-uploads/f4831424-e81a-4716-a96a-6902caceef03.png', alt: 'Akash Lamba — Founder & Head Coach', cat: 'trainers' as Category },
+  { src: '/lovable-uploads/f4831424-e81a-4716-a96a-6902caceef03.png', alt: 'Ashutosh — Founder & Head Coach', cat: 'trainers' as Category },
 ];
 
 const TABS: { label: string; value: Category }[] = [

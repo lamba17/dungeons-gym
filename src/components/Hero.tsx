@@ -19,7 +19,7 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundColor: theme === 'light' ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.85)'
+          backgroundColor: theme === 'light' ? '#ffffff' : 'rgba(0, 0, 0, 0.85)'
         }}
       />
 

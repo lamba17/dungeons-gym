@@ -75,6 +75,9 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="order-1 lg:order-2 flex items-center justify-center relative"
+          style={{
+            backgroundColor: theme === 'light' ? '#ffffff' : 'transparent'
+          }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(358_95%_45%/0.18),transparent_65%)]" />
           <img

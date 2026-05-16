@@ -149,10 +149,12 @@
     @apply w-full text-sm;
   }
   .dash-table th {
-    @apply text-left font-heading text-xs uppercase tracking-[0.15em] text-foreground/50 py-3 px-4 border-b border-border;
+    @apply text-left font-heading text-xs uppercase tracking-[0.15em] py-3 px-4 border-b border-border;
+    color: rgba(var(--foreground-rgb), 0.5);
   }
   .dash-table td {
-    @apply py-3 px-4 border-b border-border/50 text-foreground/80;
+    @apply py-3 px-4 border-b text-foreground;
+    border-bottom-color: rgba(var(--border), 0.5);
   }
   .dash-table tr:hover td {
     @apply bg-primary/5;

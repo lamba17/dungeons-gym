@@ -19,7 +19,13 @@
       "Bash(powershell -Command \":*)",
       "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/start-dev.ps1\")",
       "Bash(powershell -ExecutionPolicy Bypass -Command \"Get-Command node.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; Get-Command npm.cmd -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
-      "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/build.ps1\")"
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:/Akash/IT Department/11. AI for Everyone/Claude/Claude Project/1. Dungeon Gym Website/build.ps1\")",
+      "Bash(python3 -c \":*)",
+      "Bash(/c/Users/HP/AppData/Local/Programs/Python/Python310/python.exe -c \":*)",
+      "Bash(where node)",
+      "Bash(where npm)",
+      "Bash(where npx)",
+      "Bash(powershell -Command \"Get-Command node, npm, npx -ErrorAction SilentlyContinue | Select-Object Name, Source\")"
     ]
   }
 }

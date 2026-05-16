@@ -18,9 +18,9 @@
 }
 
 html.light {
-  --background: #ffffff;
+  --background: #ffffff !important;
   --background-secondary: #f5f5f5;
-  --foreground: #111111;
+  --foreground: #111111 !important;
   --foreground-rgb: 17, 17, 17;
   --card: #f8f8f8;
   --border: #e0e0e0;

@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Hero() {
+  const { theme } = useTheme();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
 
@@ -12,8 +15,13 @@ export default function Hero() {
         alt=""
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-background/90" />
+      {/* Theme-aware overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: theme === 'light' ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.85)'
+        }}
+      />
 
       {/* Red radial glow right */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,hsl(358_95%_45%/0.12),transparent_70%)]" />

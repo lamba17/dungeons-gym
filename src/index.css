@@ -16,6 +16,7 @@ html[data-theme="dark"] {
   --chart-legend: rgba(245,245,245,0.6);
   --facility-gradient: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
   --outdoor-gradient-from: rgba(0,0,0,0.8);
+  --hero-overlay-opacity: 0.85;
 }
 
 html[data-theme="light"] {
@@ -33,6 +34,7 @@ html[data-theme="light"] {
   --chart-legend: rgba(17,17,17,0.6);
   --facility-gradient: linear-gradient(to top, rgba(0,0,0,0.80) 0%, transparent 100%);
   --outdoor-gradient-from: rgba(0,0,0,0.75);
+  --hero-overlay-opacity: 0.85;
 }
 
 @tailwind base;

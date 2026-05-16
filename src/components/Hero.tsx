@@ -74,12 +74,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="order-1 lg:order-2 flex items-center justify-center relative"
+          className="order-1 lg:order-2 flex items-center justify-center relative w-full"
           style={{
             backgroundColor: theme === 'light' ? '#ffffff' : 'transparent'
           }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(358_95%_45%/0.18),transparent_65%)]" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: theme === 'light'
+                ? 'radial-gradient(ellipse at center, rgba(224,6,13,0.08), transparent 65%)'
+                : 'radial-gradient(ellipse at center, hsl(358 95% 45% / 0.18), transparent 65%)'
+            }}
+          />
           <img
             src="/assets/hero-athlete-DvGk-Szu.png"
             className="w-[320px] md:w-[400px] lg:w-[500px] xl:w-[560px] h-auto object-contain

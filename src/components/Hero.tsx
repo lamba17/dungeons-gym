@@ -6,22 +6,26 @@ export default function Hero() {
   const { theme } = useTheme();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: theme === 'light' ? '#ffffff' : '#000000' }}>
 
-      {/* BG Image */}
-      <img
-        src="/assets/hero-gym-CVmL6RnH.jpg"
-        className="absolute inset-0 w-full h-full object-cover scale-105"
-        alt=""
-      />
+      {/* BG Image - only show in dark theme */}
+      {theme === 'dark' && (
+        <img
+          src="/assets/hero-gym-CVmL6RnH.jpg"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
+          alt=""
+        />
+      )}
 
       {/* Theme-aware overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundColor: theme === 'light' ? '#ffffff' : 'rgba(0, 0, 0, 0.85)'
-        }}
-      />
+      {theme === 'dark' && (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.85)'
+          }}
+        />
+      )}
 
       {/* Red radial glow right */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,hsl(358_95%_45%/0.12),transparent_70%)]" />
@@ -74,10 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="order-1 lg:order-2 flex items-center justify-center relative w-full"
-          style={{
-            backgroundColor: theme === 'light' ? '#ffffff' : 'transparent'
-          }}
+          className="order-1 lg:order-2 flex items-center justify-center relative"
         >
           <div
             className="absolute inset-0"

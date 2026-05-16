@@ -83,7 +83,12 @@ export default function Hero() {
                        drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] relative z-10 lg:-ml-20"
             alt="Dungeon Gym Athlete"
           />
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-[20px] bg-background/80 blur-2xl rounded-full" />
+          <div
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-[20px] blur-2xl rounded-full"
+            style={{
+              backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.6)'
+            }}
+          />
         </motion.div>
       </div>
 

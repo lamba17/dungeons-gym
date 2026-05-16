@@ -79,12 +79,15 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="order-1 lg:order-2 flex items-center justify-center relative"
+          style={{
+            backgroundColor: theme === 'light' ? '#ffffff' : 'transparent'
+          }}
         >
           <div
             className="absolute inset-0"
             style={{
               background: theme === 'light'
-                ? 'radial-gradient(ellipse at center, rgba(224,6,13,0.08), transparent 65%)'
+                ? 'radial-gradient(ellipse at center, rgba(224,6,13,0.05), transparent 70%)'
                 : 'radial-gradient(ellipse at center, hsl(358 95% 45% / 0.18), transparent 65%)'
             }}
           />

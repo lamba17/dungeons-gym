@@ -20,11 +20,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement
+    console.log('Theme changing to:', theme)
     if (theme === 'light') {
       root.classList.add('light')
+      console.log('Added .light class, html element now has:', root.className)
     } else {
       root.classList.remove('light')
+      console.log('Removed .light class, html element now has:', root.className)
     }
+    console.log('Computed background:', getComputedStyle(root).getPropertyValue('--background'))
     localStorage.setItem('theme', theme)
   }, [theme])
 

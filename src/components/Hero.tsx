@@ -27,8 +27,10 @@ export default function Hero() {
         />
       )}
 
-      {/* Red radial glow right */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,hsl(358_95%_45%/0.12),transparent_70%)]" />
+      {/* Red radial glow right - only in dark theme */}
+      {theme === 'dark' && (
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,hsl(358_95%_45%/0.12),transparent_70%)]" />
+      )}
 
       {/* Content grid */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-20
@@ -83,26 +85,30 @@ export default function Hero() {
             backgroundColor: theme === 'light' ? '#ffffff' : 'transparent'
           }}
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              background: theme === 'light'
-                ? 'radial-gradient(ellipse at center, rgba(224,6,13,0.05), transparent 70%)'
-                : 'radial-gradient(ellipse at center, hsl(358 95% 45% / 0.18), transparent 65%)'
-            }}
-          />
+          {/* Radial glow - only in dark theme */}
+          {theme === 'dark' && (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: 'radial-gradient(ellipse at center, hsl(358 95% 45% / 0.18), transparent 65%)'
+              }}
+            />
+          )}
           <img
             src="/assets/hero-athlete-DvGk-Szu.png"
             className="w-[320px] md:w-[400px] lg:w-[500px] xl:w-[560px] h-auto object-contain
                        drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] relative z-10 lg:-ml-20"
             alt="Dungeon Gym Athlete"
           />
-          <div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-[20px] blur-2xl rounded-full"
-            style={{
-              backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.6)'
-            }}
-          />
+          {/* Ground shadow - only in dark theme */}
+          {theme === 'dark' && (
+            <div
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-[20px] blur-2xl rounded-full"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.6)'
+              }}
+            />
+          )}
         </motion.div>
       </div>
 

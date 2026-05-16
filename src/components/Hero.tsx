@@ -95,7 +95,7 @@ export default function Hero() {
             />
           )}
           <img
-            src="/assets/athelete-bg.png"
+            src="/assets/athelete-bg-2.png"
             className="w-[320px] md:w-[400px] lg:w-[500px] xl:w-[560px] h-auto object-contain
                        drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] relative z-10 lg:-ml-20"
             alt="Dungeon Gym Athlete"
